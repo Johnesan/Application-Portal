@@ -1,0 +1,38 @@
+{
+  "NameMessage": {
+    "Values": {
+      "en-US": "Name must be at least 5 characters.",
+      "de-DE": "Der Name muss mindestens 5 Zeichen lang sein."
+    }
+  },
+  "FamilyNameMessage": {
+    "Values": {
+      "en-US": "Family name must be at least 5 characters.",
+      "de-DE": "Der Familienname muss mindestens 5 Zeichen lang sein."
+    }
+  },
+  "AddressMessage": {
+    "Values": {
+      "en-US": "Address field must be at least 10 characters.",
+      "de-DE": "Fehlerverarbeitungsanforderung."
+    }
+  },
+  "CountryMessage": {
+    "Values": {
+      "en-US": "Country not valid.",
+      "de-DE": "Land nicht gültig."
+    }
+  },
+  "EmailMessage": {
+    "Values": {
+      "en-US": "Kindly input a valid email address.",
+      "de-DE": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+    }
+  },
+  "AgeMessage": {
+    "Values": {
+      "en-US": "Age must be between 20 and 60 years.",
+      "de-DE": "Das Alter muss zwischen 20 und 60 Jahren liegen."
+    }
+  }
+}

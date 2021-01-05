@@ -1,0 +1,9 @@
+{
+  "DefaultExceptionMessage": {
+    "Values": {
+      "en-US": "Error Processing Request.",
+      "de-DE": "Fehlerverarbeitungsanforderung."
+    }
+  }
+
+}

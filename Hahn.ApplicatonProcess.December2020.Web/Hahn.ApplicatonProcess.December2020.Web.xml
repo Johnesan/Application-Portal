@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hahn.ApplicatonProcess.December2020.Web</name>
+    </assembly>
+    <members>
+        <member name="T:Hahn.ApplicatonProcess.December2020.Web.Validation.ApplicantValidator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Hahn.ApplicatonProcess.December2020.Web.Validation.ApplicantValidator.#ctor(Microsoft.Extensions.Localization.IStringLocalizer{Hahn.ApplicatonProcess.December2020.Web.Validation.ApplicantValidator})">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Hahn.ApplicatonProcess.December2020.Web.Validation.UpdateApplicantValidator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Hahn.ApplicatonProcess.December2020.Web.Validation.UpdateApplicantValidator.#ctor(Microsoft.Extensions.Localization.IStringLocalizer{Hahn.ApplicatonProcess.December2020.Web.Validation.UpdateApplicantValidator})">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>
