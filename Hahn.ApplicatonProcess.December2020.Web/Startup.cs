@@ -1,5 +1,6 @@
 using Askmethat.Aspnet.JsonLocalizer.Extensions;
 using Askmethat.Aspnet.JsonLocalizer.JsonOptions;
+using Aurelia.DotNet;
 using AutoMapper;
 using FluentValidation.AspNetCore;
 using Hahn.ApplicatonProcess.December2020.Data;
@@ -80,6 +81,7 @@ namespace Hahn.ApplicatonProcess.December2020.Web
                 options.SupportedUICultures = _supportedCultures;
             });
 
+            services.AddCors();
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped(typeof(IBaseRepository<,>), typeof(BaseRepository<,>));
             services.AddScoped<IApplicantService, ApplicantService>();
@@ -126,6 +128,8 @@ namespace Hahn.ApplicatonProcess.December2020.Web
                 c.RoutePrefix = string.Empty;
             });
 
+            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
@@ -146,7 +150,7 @@ namespace Hahn.ApplicatonProcess.December2020.Web
 
                 if (env.IsDevelopment())
                 {
-                    spa.UseAngularCliServer(npmScript: "start");
+                    spa.UseAureliaCliServer();
                 }
             });
         }

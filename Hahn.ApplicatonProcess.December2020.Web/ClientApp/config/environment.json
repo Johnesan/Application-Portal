@@ -1,0 +1,5 @@
+{
+  "debug": true,
+  "testing": true,
+  "base_url": "https://localhost:44355/"
+}

@@ -1,27 +1,33 @@
-# Hahn.ApplicatonProcess.December2020.Web
+# `Hahn_ApplicationProcess_December2020_Web`
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+This project is bootstrapped by [aurelia-cli](https://github.com/aurelia/cli).
 
-## Development server
+For more information, go to https://aurelia.io/docs/cli/webpack
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Run dev app
 
-## Code scaffolding
+Run `npm start`, then open `http://localhost:8080`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+You can change the standard webpack configurations from CLI easily with something like this: `npm start -- --open --port 8888`. However, it is better to change the respective npm scripts or `webpack.config.js` with these options, as per your need.
 
-## Build
+To enable Webpack Bundle Analyzer, do `npm run analyze` (production build).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+To enable hot module reload, do `npm start -- --hmr`.
 
-## Running unit tests
+To change dev server port, do `npm start -- --port 8888`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To change dev server host, do `npm start -- --host 127.0.0.1`
 
-## Running end-to-end tests
+**PS:** You could mix all the flags as well, `npm start -- --host 127.0.0.1 --port 7070 --open --hmr`
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+For long time aurelia-cli user, you can still use `au run` with those arguments like `au run --env prod --open --hmr`. But `au run` now simply executes `npm start` command.
 
-## Further help
+## Build for production
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Run `npm run build`, or the old way `au build --env prod`.
+
+## Unit tests
+
+Run `au test` (or `au jest`).
+
+To run in watch mode, `au test --watch` or `au jest --watch`.

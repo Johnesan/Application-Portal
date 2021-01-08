@@ -1,20 +1,21 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { bootstrap } from 'aurelia-bootstrapper';
+import {Aurelia} from 'aurelia-framework';
+import * as environment from '../config/environment.json';
+import {PLATFORM} from 'aurelia-pal';
 
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
+bootstrap(async (aurelia: Aurelia) => {
+  aurelia.use
+    .standardConfiguration()
+    .feature(PLATFORM.moduleName('resources/index'))
+    .plugin(PLATFORM.moduleName('aurelia-validation'))
+    .plugin(PLATFORM.moduleName('aurelia-fetch-client'))
+    .plugin(PLATFORM.moduleName('aurelia-dialog'));
 
-export function getBaseUrl() {
-  return document.getElementsByTagName('base')[0].href;
-}
+  aurelia.use.developmentLogging(environment.debug ? 'debug' : 'warn');
 
-const providers = [
-  { provide: 'BASE_URL', useFactory: getBaseUrl, deps: [] }
-];
+  if (environment.testing) {
+    aurelia.use.plugin(PLATFORM.moduleName('aurelia-testing'));
+  }
 
-if (environment.production) {
-  enableProdMode();
-}
-
-platformBrowserDynamic(providers).bootstrapModule(AppModule)
-  .catch(err => console.log(err));
+  await aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('app'), document.body));
+});

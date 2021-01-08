@@ -1,0 +1,38 @@
+﻿<template>
+  <div class="col-md-4 offset-md-4 panel border border-3 shadow p-5 mt-5 mb-5 bg-white rounded">
+    <p class="lead text-center mb-5 pb-3">Your Application Details</hp>
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <th scope="row">Name</th>
+        <td>${applicant.name}</td>
+      </tr>
+      <tr>
+        <th scope="row">Family Name</th>
+        <td>${applicant.familyName}</td>
+      </tr>
+      <tr>
+        <th scope="row">Email</th>
+        <td>${applicant.emailAddress}</td>
+      </tr>
+      <tr>
+        <th scope="row">Address</th>
+        <td>${applicant.address}</td>
+      </tr>
+      <tr>
+        <th scope="row">Country of Origin</th>
+        <td>${applicant.countryOfOrigin}</td>
+      </tr>
+      <tr>
+        <th scope="row">Age</th>
+        <td>${applicant.age}</td>
+      </tr>
+      <tr>
+        <th scope="row">Hired</th>
+        <td>${applicant.hired}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-info col-md-4 offset-md-2 mt-3" click.delegate="newApplication()">New Application</button>
+  </div>
+</template>

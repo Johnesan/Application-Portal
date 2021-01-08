@@ -1,0 +1,14 @@
+<template>
+    <ux-dialog>
+        <ux-dialog-header>
+            <h3>Confirm Action</h3>
+        </ux-dialog-header> 
+       <ux-dialog-body>
+          <p>${message}</p>
+       </ux-dialog-body> 
+       <ux-dialog-footer>          
+            <button type="button" class="btn btn-success" click.trigger = "controller.ok(message)">Proceed</button>
+            <button attach-focus type="button" class="btn btn-danger" click.trigger = "controller.cancel()">Cancel</button>
+       </ux-dialog-footer>	
+    </ux-dialog>
+ </template>
