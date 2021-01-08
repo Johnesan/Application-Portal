@@ -10,11 +10,11 @@ export class ApplicantValidator{
 
     getValidationRules() : Rule<Applicant, any>[][] {
         return ValidationRules
-        .ensure((a: Applicant) => a.name).required().minLength(2).withMessage("NameMessage")
+        .ensure((a: Applicant) => a.name).required().minLength(5).withMessage("NameMessage")
         .ensure((a: Applicant) => a.familyName).required().minLength(5).withMessage("NameMessage")
         .ensure((a: Applicant) => a.address).required().minLength(10).withMessage("NameMessage")
         .ensure((a: Applicant) => a.emailAddress).required().email().withMessage("NameMessage")
-        .ensure((a: Applicant) => a.age).required().range(10, 60).withMessage("NameMessage")
+        .ensure((a: Applicant) => a.age).required().range(20, 60).withMessage("NameMessage")
         .ensure((a: Applicant) => a.countryOfOrigin).required()
         .satisfies((value: string, obj : Applicant) => 
             (value === null || value === undefined || this.validateCountry(value))).withMessage("Invalid country")
