@@ -1,37 +1,35 @@
 ﻿<template>
   <div class="col-md-4 offset-md-4 panel border border-3 shadow p-5 mb-5 bg-white rounded">
-    <p class="lead text-center mb-5 pb-3">New Application</hp>  
-
-<form submit.delegate = "saveApplicant()" id="add-applicant-form">
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label>Name</label>
-      <input type="text" class="form-control" value.bind="applicant.name & validate">
-    </div>
-    <div class="form-group col-md-6">
-      <label>Family Name</label>
-      <input type="text" class="form-control" value.bind="applicant.familyName & validate">
-    </div>
-    <div class="form-group col-md-12">
-      <label>Address</label>
-      <input type="text" class="form-control" value.bind="applicant.address & validate">
-    </div>
-    <div class="form-group col-md-12">
-      <label>Email</label>
-      <input type="text" class="form-control" value.bind="applicant.emailAddress & validate">
-    </div>  
-    <div class="form-group col-md-6">
-      <label>Country of Origin</label>
-      <input type="text" class="form-control" value.bind="applicant.countryOfOrigin & validate">
-    </div>        
-    <div class="form-group col-md-6">
-      <label for="inputCity">Age</label>
-      <input type="number" class="form-control" id="inputCity" value.bind="applicant.age & validate">
-    </div>
-  <button type="submit" class="btn btn-success col-md-4 offset-md-1 mt-3" disabled.bind="!canSave" >Sign in</button>
-  <button type="reset" class="btn btn-info col-md-4 offset-md-1 mt-3" disabled.bind="!canReset" click.delegate="reset()" >Reset</button>
-</form>
-<div class="col-md-4 offset-md-4">
-
-
+    <p class="lead text-center mb-5 pb-3" i18n="applicant.newApplication">New Application</hp>
+    <form submit.delegate="saveApplicant()" id="add-applicant-form">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label i18n="applicant.name">Name</label>
+          <input type="text" class="form-control" value.bind="applicant.name & validate">
+        </div>
+        <div class="form-group col-md-6">
+          <label i18n="applicant.familyName">Family Name</label>
+          <input type="text" class="form-control" value.bind="applicant.familyName & validate">
+        </div>
+        <div class="form-group col-md-12">
+          <label i18n="applicant.address">Address</label>
+          <input type="text" class="form-control" value.bind="applicant.address & validate">
+        </div>
+        <div class="form-group col-md-12">
+          <label i18n="applicant.email">Email</label>
+          <input type="text" class="form-control" value.bind="applicant.emailAddress & validate">
+        </div>
+        <div class="form-group col-md-6">
+          <label i18n="applicant.countryOfOrigin">Country of Origin</label>
+          <input type="text" class="form-control" value.bind="applicant.countryOfOrigin & validate">
+        </div>
+        <div class="form-group col-md-6">
+          <label i18n="applicant.age">Age</label>
+          <input type="number" class="form-control" id="inputCity" value.bind="applicant.age & validate">
+        </div>
+        <button type="submit" class="btn btn-success col-md-4 offset-md-1 mt-3" i18n="apply" disabled.bind="!canSave">Apply</button>
+        <button type="reset" class="btn btn-info col-md-4 offset-md-1 mt-3" i18n="reset" disabled.bind="!canReset"
+          click.delegate="reset()">Reset</button>
+    </form>
+    <div class="col-md-4 offset-md-4">
 </template>

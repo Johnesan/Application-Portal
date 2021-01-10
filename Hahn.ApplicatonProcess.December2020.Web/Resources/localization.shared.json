@@ -1,8 +1,8 @@
 {
   "DefaultExceptionMessage": {
     "Values": {
-      "en-US": "Error Processing Request.",
-      "de-DE": "Fehlerverarbeitungsanforderung."
+      "en": "Error Processing Request.",
+      "de": "Fehlerverarbeitungsanforderung."
     }
   }
 

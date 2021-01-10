@@ -43,7 +43,7 @@ namespace Hahn.ApplicatonProcess.December2020.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc(x => x.Filters.Add(new ValidationFilter()))
+            services.AddMvc(x => x.Filters.Add(new ValidationFilter(Configuration)))
             .AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<Startup>());
 
             services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("TempDb"));

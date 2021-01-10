@@ -8,6 +8,7 @@ import { Applicant } from '../common/applicant';
 import {autoinject} from 'aurelia-dependency-injection';
 import { ValidationControllerFactory, ValidationController, validateTrigger, Validator, ValidateEvent} from 'aurelia-validation';
 import { DialogService } from 'aurelia-dialog';
+import { I18N } from 'aurelia-i18n';
 
 
 @autoinject
@@ -18,7 +19,8 @@ export class AddApplicant {
   canReset: boolean = false;
   
   constructor(controllerFactory: ValidationControllerFactory, private applicantValidator : ApplicantValidator,
-    private applicantService : ApplicantService, private router : Router, private dialogService: DialogService) {
+    private applicantService : ApplicantService, private router : Router, private dialogService: DialogService,
+    private i18n : I18N) {
     this.controller = controllerFactory.createForCurrentScope();
     this.controller.validateTrigger = validateTrigger.change;
     this.controller.addRenderer(new BootstrapFormRenderer());
@@ -33,7 +35,7 @@ export class AddApplicant {
         this.applicantService.addApplicant(this.applicant)
         .then((applicantData : Applicant) => {
           this.router.navigateToRoute('application-success', {id: applicantData.id});
-          this.displayMessage("You have successfully applied!");
+          this.displayMessage(this.i18n.tr('applicant.successfulApplication'));
         })
         .catch(error => {
           if(error.name === 'ValidationError'){
@@ -52,15 +54,16 @@ export class AddApplicant {
   }
 
   reset(){
-    this.dialogService.open({ viewModel: PromptModal, model: 'Are you sure you want to clear all inputs?', lock: false }).whenClosed(response => {
+    this.dialogService.open({ viewModel: PromptModal, model: this.i18n.tr('applicant.resetConfirmation'), lock: false }).whenClosed(response => {
       if (!response.wasCancelled) {
         (document.getElementById('add-applicant-form') as HTMLFormElement).reset();
+        this.canSave = false;
       }
     });
   }
 
   private validateWhole(event : ValidateEvent) {
-    this.canSave = event.type === 'validate' && this.controller.errors.length === 0;
+    this.canSave =  event.type === 'validate' && this.controller.errors.length === 0 && !this.emptyFieldExist();
     this.canReset = event.type === 'validate' && this.nonEmptyFieldExist();
   }
 
@@ -68,6 +71,14 @@ export class AddApplicant {
     for (var key in this.applicant) {
       if (this.applicant[key] !== null && this.applicant[key] != "" && this.applicant[key] != undefined) return true;
     }
+    return false;
+  }
+
+  private emptyFieldExist() : boolean {
+    for (let key in this.applicant) {
+      if (this.applicant[key] == null || this.applicant[key] == "" || this.applicant[key] == undefined)
+        return true;
+     }
     return false;
   }
 

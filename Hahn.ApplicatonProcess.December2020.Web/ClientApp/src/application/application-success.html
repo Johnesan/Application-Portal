@@ -1,38 +1,38 @@
 ﻿<template>
   <div class="col-md-4 offset-md-4 panel border border-3 shadow p-5 mt-5 mb-5 bg-white rounded">
-    <p class="lead text-center mb-5 pb-3">Your Application Details</hp>
+    <p class="lead text-center mb-5 pb-3" i18n="applicant.applicationDetails">Your Application Details</hp>
   <table class="table table-bordered">
     <tbody>
       <tr>
-        <th scope="row">Name</th>
+        <th scope="row" i18n="applicant.name">Name</th>
         <td>${applicant.name}</td>
       </tr>
       <tr>
-        <th scope="row">Family Name</th>
+        <th scope="row" i18n="applicant.familyName">Family Name</th>
         <td>${applicant.familyName}</td>
       </tr>
       <tr>
-        <th scope="row">Email</th>
+        <th scope="row" i18n="applicant.email">Email</th>
         <td>${applicant.emailAddress}</td>
       </tr>
       <tr>
-        <th scope="row">Address</th>
+        <th scope="row" i18n="applicant.address">Address</th>
         <td>${applicant.address}</td>
       </tr>
       <tr>
-        <th scope="row">Country of Origin</th>
+        <th scope="row" i18n="applicant.countryOfOrigin">Country of Origin</th>
         <td>${applicant.countryOfOrigin}</td>
       </tr>
       <tr>
-        <th scope="row">Age</th>
+        <th scope="row" i18n="applicant.age">Age</th>
         <td>${applicant.age}</td>
       </tr>
       <tr>
-        <th scope="row">Hired</th>
+        <th scope="row" i18n="applicant.hired">Hired</th>
         <td>${applicant.hired}</td>
       </tr>
     </tbody>
   </table>
-  <button class="btn btn-info col-md-4 offset-md-2 mt-3" click.delegate="newApplication()">New Application</button>
+  <button class="btn btn-info col-md-4 offset-md-2 mt-3" i18n="applicant.newApplication" click.delegate="newApplication()">New Application</button>
   </div>
 </template>

@@ -1,0 +1,33 @@
+{
+    "applicant" : {
+        "name" : "Name",
+        "familyName" : "Nachname",
+        "address" : "Adresse",
+        "email" : "E-Mail-Addresse",
+        "countryOfOrigin" : "Herkunftsland",
+        "age" : "Age",
+        "hired" : "Gemietet",
+        "newApplication" : "Neue Bewerbung",
+        "successfulApplication" : "Sie haben sich erfolgreich beworben!",
+        "resetConfirmation" : "Möchten Sie wirklich alle Eingaben löschen?",
+        "applicationDetails" : "Ihre Bewerbungsdetails",
+        "getApplicantFailed" : "Anwendungsdetails konnten nicht abgerufen werden.",
+        "nameLengthValidation" : "Der Name muss mindestens 5 Zeichen lang sein.",
+        "familyNameLengthValidation" : "Der Familienname muss mindestens 5 Zeichen lang sein.",
+        "addressLengthValidation" : "Das Adressfeld muss mindestens 10 Zeichen lang sein.",
+        "emailValidation" : "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+        "ageRangeValidation" : "Das Alter muss zwischen 20 und 60 Jahren liegen.",
+        "countryValidation" : "Land nicht gültig."
+    }, 
+    "apply" : "Anwenden",
+    "reset" : "Zurücksetzen",
+    "close" : "Schließen",
+    "details" : "Einzelheiten",
+    "proceed" : "Vorgehen",
+    "title" : "Hahn Bewerbungsprozess",
+    "english" : "Englisch",
+    "german" : "Deutsche",
+    "confirmAction" : "Aktion bestätigen",
+    "errorOccurred" : "Ein Fehler ist aufgetreten.",
+    "setLocaleFailed" : "Die Spracheinstellung auf dem Server konnte nicht geändert werden."
+}

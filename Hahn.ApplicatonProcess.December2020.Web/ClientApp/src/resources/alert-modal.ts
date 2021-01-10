@@ -5,7 +5,6 @@ import {DialogController} from 'aurelia-dialog';
 export class AlertModal {
     message: string;
    constructor(private controller : DialogController) {
-      this.controller = controller;
    }
    activate(message) {
       this.message = message;

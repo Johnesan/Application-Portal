@@ -1,0 +1,33 @@
+{
+    "applicant" : {        
+        "name" : "Name",
+        "familyName" : "Family Name",
+        "address" : "Address",
+        "email" : "Email Address",
+        "countryOfOrigin" : "Country of Origin",
+        "age" : "Age",
+        "hired" : "Hired",
+        "newApplication" : "New Application",
+        "successfulApplication" : "You have successfully applied!",
+        "resetConfirmation" : "Are you sure you want to clear all inputs?",
+        "applicationDetails" : "Your Application Details",
+        "getApplicantFailed" : "'Failed to fetch application details.'",
+        "nameLengthValidation" : "Name must be at least 5 characters.",
+        "familyNameLengthValidation" : "Family name must be at least 5 characters.",
+        "addressLengthValidation" : "Address field must be at least 10 characters.",
+        "emailValidation" : "Kindly input a valid email address.",
+        "ageRangeValidation" : "Age must be between 20 and 60 years.",
+        "countryValidation" : "Country not valid."
+    }, 
+    "apply" : "Apply",
+    "reset" : "Reset",
+    "close" : "Close",
+    "details" : "Details",
+    "proceed": "Proceed",
+    "title" : "Hahn Application Process",
+    "english" : "English",
+    "german" : "German",
+    "confirmAction" : "Confirm Action",
+    "errorOccurred" : "An error occurred.",
+    "setLocaleFailed" : "Could not change language setting on server."
+}
