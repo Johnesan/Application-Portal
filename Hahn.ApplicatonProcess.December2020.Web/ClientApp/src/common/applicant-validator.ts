@@ -11,11 +11,11 @@ export class ApplicantValidator{
 
     getValidationRules() : Rule<Applicant, any>[][] {
         return ValidationRules
-        .ensure((a: Applicant) => a.name).required().minLength(2).withMessage(this.i18n.tr('applicant.nameLengthValidation'))
+        .ensure((a: Applicant) => a.name).required().minLength(5).withMessage(this.i18n.tr('applicant.nameLengthValidation'))
         .ensure((a: Applicant) => a.familyName).required().minLength(5).withMessage(this.i18n.tr('applicant.familyNameLengthValidation'))
         .ensure((a: Applicant) => a.address).required().minLength(10).withMessage(this.i18n.tr('applicant.addressLengthValidation'))
         .ensure((a: Applicant) => a.emailAddress).required().email().withMessage(this.i18n.tr('applicant.emailValidation'))
-        .ensure((a: Applicant) => a.age).required().range(10, 60).withMessage(this.i18n.tr('applicant.ageRangeValidation'))
+        .ensure((a: Applicant) => a.age).required().range(20, 60).withMessage(this.i18n.tr('applicant.ageRangeValidation'))
         .ensure((a: Applicant) => a.countryOfOrigin).required()
         .satisfies((value: string, obj : Applicant) => 
             (value === null || value === undefined || this.validateCountry(value))).withMessage(this.i18n.tr('applicant.countryValidation'))
