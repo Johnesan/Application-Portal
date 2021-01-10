@@ -26,7 +26,7 @@ namespace Hahn.ApplicatonProcess.December2020.Web.Validation
             RuleFor(a => a.FamilyName).NotEmpty().MinimumLength(5).WithMessage(_localizer["FamilyNameMessage"]);
             RuleFor(a => a.Address).NotEmpty().MinimumLength(10).WithMessage(_localizer["AddressMessage"]);
             RuleFor(a => a.CountryOfOrigin).NotEmpty().ValidCountry().WithMessage(_localizer["CountryMessage"]);
-            RuleFor(a => a.EmailAddress).NotEmpty().EmailAddress().WithMessage(_localizer["EmailMessage"]);
+            RuleFor(a => a.EmailAddress).NotEmpty().Matches(@"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$").WithMessage(_localizer["EmailMessage"]);
             RuleFor(a => a.Age).InclusiveBetween(20, 60).WithMessage(_localizer["AgeMessage"]);
         }
     }

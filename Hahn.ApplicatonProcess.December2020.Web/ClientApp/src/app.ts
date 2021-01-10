@@ -44,13 +44,12 @@ export class App {
       { route: 'application-success/:id', name: 'application-success', moduleId: PLATFORM.moduleName('application/application-success'), title: this.i18n.tr('details') }
     ]);
   }
-
+  
   setLocale(locale) {
     this.i18n.setLocale(locale)
-      .then(() => {
-        sessionStorage.setItem('locale', locale);
-        location.reload();
-      })
+      .then(() => sessionStorage.setItem('locale', locale))
+      .then(() => this.httpClient.fetch(`${environment.base_url}Home/SetLanguage/?culture=${locale}`))
+      .then(() => location.reload())
       .catch(error => this.displayMessage(this.i18n.tr('setLocaleFailed')));
   }
 

@@ -21,8 +21,8 @@ bootstrap(async (aurelia: Aurelia) => {
           loadPath: './locales/{{lng}}/{{ns}}.json',
         },
         attributes: aliases,
-        lng: 'de',
-        fallbackLng: 'en',
+        lng: 'en',
+        fallbackLng: 'de',
         debug: false
       });
     });

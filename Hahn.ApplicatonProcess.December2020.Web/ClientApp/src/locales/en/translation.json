@@ -11,7 +11,7 @@
         "successfulApplication" : "You have successfully applied!",
         "resetConfirmation" : "Are you sure you want to clear all inputs?",
         "applicationDetails" : "Your Application Details",
-        "getApplicantFailed" : "'Failed to fetch application details.'",
+        "getApplicantFailed" : "Failed to fetch application details.",
         "nameLengthValidation" : "Name must be at least 5 characters.",
         "familyNameLengthValidation" : "Family name must be at least 5 characters.",
         "addressLengthValidation" : "Address field must be at least 10 characters.",

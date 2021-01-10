@@ -14,7 +14,7 @@ export class ApplicantValidator{
         .ensure((a: Applicant) => a.name).required().minLength(5).withMessage(this.i18n.tr('applicant.nameLengthValidation'))
         .ensure((a: Applicant) => a.familyName).required().minLength(5).withMessage(this.i18n.tr('applicant.familyNameLengthValidation'))
         .ensure((a: Applicant) => a.address).required().minLength(10).withMessage(this.i18n.tr('applicant.addressLengthValidation'))
-        .ensure((a: Applicant) => a.emailAddress).required().email().withMessage(this.i18n.tr('applicant.emailValidation'))
+        .ensure((a: Applicant) => a.emailAddress).required().matches(/\S+@\S+\.\S+/).withMessage(this.i18n.tr('applicant.emailValidation'))
         .ensure((a: Applicant) => a.age).required().range(20, 60).withMessage(this.i18n.tr('applicant.ageRangeValidation'))
         .ensure((a: Applicant) => a.countryOfOrigin).required()
         .satisfies((value: string, obj : Applicant) => 

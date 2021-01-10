@@ -82,11 +82,10 @@ namespace Hahn.ApplicatonProcess.December2020.Web
                 options.SupportedUICultures = _supportedCultures;
             });
 
-            services.AddCors();
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped(typeof(IBaseRepository<,>), typeof(BaseRepository<,>));
             services.AddScoped<IApplicantService, ApplicantService>();
-            // In production, the Angular files will be served from this directory
+
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
@@ -128,7 +127,6 @@ namespace Hahn.ApplicatonProcess.December2020.Web
 
             
 
-            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
             app.UseRouting();
 
