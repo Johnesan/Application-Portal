@@ -1,5 +1,8 @@
-﻿import { AlertModal } from './../resources/alert-modal';
+﻿import { PLATFORM } from 'aurelia-pal';
+import { AlertModal } from './../resources/alert-modal';
+PLATFORM.moduleName('./../resources/alert-modal');
 import { PromptModal } from './../resources/prompt-modal';
+PLATFORM.moduleName('./../resources/prompt-modal');
 import { BootstrapFormRenderer } from './../resources/bootstrap-form-renderer';
 import { Router } from 'aurelia-router';
 import { ApplicantService } from '../common/applicant-service';

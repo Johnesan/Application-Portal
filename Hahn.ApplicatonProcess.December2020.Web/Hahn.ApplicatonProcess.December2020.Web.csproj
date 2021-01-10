@@ -32,13 +32,16 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientApp\src\applicant\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\src\applicant\**" />
+    <EmbeddedResource Remove="ClientApp\src\applicant\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="ClientApp\src\applicant\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\src\applicant\add-applicant\add-applicant.ts" />
     <None Remove="ClientApp\src\common\services\applicant-service.ts" />
   </ItemGroup>
 
@@ -48,12 +51,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\src\applicant\update-applicant\" />
     <Folder Include="ClientApp\src\common\models\" />
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\src\applicant\add-applicant\add-applicant.ts" />
     <TypeScriptCompile Include="ClientApp\src\common\services\applicant-service.ts" />
   </ItemGroup>
 
