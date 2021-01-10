@@ -17,6 +17,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Swashbuckle.AspNetCore.Filters;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -50,10 +51,10 @@ namespace Hahn.ApplicatonProcess.December2020.Web
 
             services.AddSwaggerGen(c =>
             {
-                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-                c.IncludeXmlComments(xmlPath, true);
+                c.ExampleFilters();
             });
+
+            services.AddSwaggerExamplesFromAssemblies(Assembly.GetEntryAssembly());
 
             services.AddControllersWithViews()
                 .AddDataAnnotationsLocalization()
@@ -105,7 +106,12 @@ namespace Hahn.ApplicatonProcess.December2020.Web
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+                c.DocumentTitle = "Hahn.ApplicationProcess.December2020";
+            });
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             if (!env.IsDevelopment())
@@ -120,13 +126,7 @@ namespace Hahn.ApplicatonProcess.December2020.Web
                 SupportedUICultures = _supportedCultures
             });
 
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-                c.DocumentTitle = "Hahn.ApplicationProcess.December2020";
-                c.RoutePrefix = string.Empty;
-            });
+            
 
             app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 

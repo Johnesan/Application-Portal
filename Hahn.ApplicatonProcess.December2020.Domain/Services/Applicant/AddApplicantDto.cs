@@ -14,5 +14,5 @@ namespace Hahn.ApplicatonProcess.December2020.Domain.Services.Applicant
         public string CountryOfOrigin { get; set; }
         public string EmailAddress { get; set; }
         public int Age { get; set; }
-    }
+    }    
 }

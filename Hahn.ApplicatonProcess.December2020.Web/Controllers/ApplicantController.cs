@@ -1,8 +1,11 @@
 ﻿using Hahn.ApplicatonProcess.December2020.Domain.Services.Applicant;
+using Hahn.ApplicatonProcess.December2020.Web.Examples;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using Serilog;
+using Swashbuckle.AspNetCore.Filters;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -37,7 +40,7 @@ namespace Hahn.ApplicatonProcess.December2020.Web.Controllers
 
         // POST: ApplicantController/Create
         [HttpPost("Create")]
-        //[ValidateAntiForgeryToken]
+        [SwaggerRequestExample(typeof(AddApplicantDto), typeof(AddApplicantDtoExample))]
         public async Task<IActionResult> Create([FromBody] AddApplicantDto applicant)
         {
             var applicantToReturn = await _applicantService.AddNewApplicant(applicant);
@@ -50,7 +53,7 @@ namespace Hahn.ApplicatonProcess.December2020.Web.Controllers
 
         // POST: ApplicantController/Edit/5
         [HttpPost("Edit/{id}")]
-        [ValidateAntiForgeryToken]
+        [SwaggerRequestExample(typeof(UpdateApplicantDto), typeof(UpdateApplicantDtoExample))]
         public async Task<IActionResult> Edit([FromRoute] int id, [FromBody] UpdateApplicantDto applicant)
         {
             var updatedApplicant = await _applicantService.UpdateApplicant(id, applicant);
@@ -60,7 +63,6 @@ namespace Hahn.ApplicatonProcess.December2020.Web.Controllers
 
         // POST: ApplicantController/Delete/5
         [HttpPost("Delete/{id}")]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete([FromRoute] int id)
         {
             await _applicantService.DeleteApplicant(id);
